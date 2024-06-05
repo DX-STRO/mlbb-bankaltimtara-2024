@@ -46,7 +46,7 @@ nav ul li a {
     padding: .5em 1em;
     border-radius: .5em;
     border: 2px transparent solid;
-    transition: ease .2s;
+    transition: ease-in-out .2s;
 }
 
 nav ul li a:hover {

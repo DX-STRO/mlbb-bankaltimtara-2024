@@ -39,27 +39,39 @@ header::before {
 }
 
 header .top-left-rect1 {
-    position: absolute;
+    background: #2783C5;
     width: 300px;
     height: 800px;
-    background: #2783C5;
-    box-shadow: 5px 0 6px 1px rgba(0, 0, 0, 0.5);
-    transform: rotate(30deg);
+    position: absolute;
     top: -560px;
     left: -90px;
+    box-shadow: 5px 0 6px 1px rgba(0, 0, 0, 0.5);
+    transform: translateX(-7rem) rotate(30deg);
     z-index: 5;
+    animation: intro-rect 1.5s ease-in forwards;
 }
 
 header .top-left-rect2 {
-    position: absolute;
+    background: rgba(251, 188, 5, 1);
     width: 300px;
     height: 800px;
-    background: rgba(251, 188, 5, 1);
-    box-shadow: 5px 0 6px 1px rgba(0, 0, 0, 0.3);
-    transform: rotate(30deg);
+    position: absolute;
     top: -520px;
     left: -90px;
+    box-shadow: 5px 0 6px 1px rgba(0, 0, 0, 0.3);
+    transform: translateX(-7rem) rotate(30deg);
     z-index: 4;
+    animation: intro-rect 1.5s ease-out forwards;
+}
+
+@keyframes intro-rect {
+    0% {
+        transform: translateX(-7rem) rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
 }
 
 header .hero {
@@ -251,7 +263,7 @@ header .right-content .logo-event {
     padding: 0 10px;
 }
 
-.live-streaming-container {
+.streaming-section {
     width: 100vw;
     height: 100vh;
     padding: 0;
@@ -259,17 +271,17 @@ header .right-content .logo-event {
     align-items: center;
 }
 
-.live-streaming-container .img-streaming {
+.streaming-section .img-streaming {
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
-.live-streaming-container .img-streaming img {
+.streaming-section .img-streaming img {
     height: 100%;
 }
 
-.live-streaming-container .text-streaming {
+.streaming-section .text-streaming {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,13 +289,13 @@ header .right-content .logo-event {
     padding-right: 100px;
 }
 
-.live-streaming-container .text-streaming .p-streaming {
+.streaming-section .text-streaming .p-streaming {
     position: relative;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.live-streaming-container .text-streaming .p-streaming::before {
+.streaming-section .text-streaming .p-streaming::before {
     content: "-";
     position: absolute;
     top: 3px;
@@ -294,12 +306,12 @@ header .right-content .logo-event {
     border-bottom: 4px rgba(39, 131, 197, 1) solid;
 }
 
-.live-streaming-container .text-streaming h2 {
+.streaming-section .text-streaming h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.live-streaming-container .text-streaming a {
+.streaming-section .text-streaming a {
     position: relative;
     display: flex;
     align-items: center;
@@ -318,11 +330,11 @@ header .right-content .logo-event {
 }
 
 
-.live-streaming-container .text-streaming a:hover {
+.streaming-section .text-streaming a:hover {
     animation: animate 8s linear infinite;
 }
 
-.live-streaming-container .text-streaming a::before {
+.streaming-section .text-streaming a::before {
     content: "";
     position: absolute;
     top: -3px;
@@ -337,27 +349,26 @@ header .right-content .logo-event {
     transition: .5s;
 }
 
-.live-streaming-container .text-streaming a:hover:before {
+.streaming-section .text-streaming a:hover:before {
     filter: blur(3px);
     opacity: 1;
     animation: animate 6s linear infinite;
 }
 
-.about {
-    padding-top: 50px;
-    margin-bottom: 100px;
+.about-section {
+    padding: 5rem 0;
 }
 
-.about h2 {
+.about-section h2 {
     width: 300px;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 30px;
     position: relative;
-    margin: 50px auto;
+    margin: 0 auto 3rem auto;
 }
 
-.about h2::before {
+.about-section h2::before {
     content: "-";
     position: absolute;
     top: 10px;
@@ -368,7 +379,7 @@ header .right-content .logo-event {
     border-bottom: 4px rgba(39, 131, 197, 1) solid;
 }
 
-.about h2::after {
+.about-section h2::after {
     content: "-";
     position: absolute;
     top: 10px;
@@ -379,7 +390,7 @@ header .right-content .logo-event {
     border-bottom: 4px rgba(39, 131, 197, 1) solid;
 }
 
-.about .image {
+.about-section .image {
     width: 300px;
     position: relative;
     margin: 0;
@@ -388,13 +399,13 @@ header .right-content .logo-event {
     transition: all .3s;
 }
 
-.about .image img {
+.about-section .image img {
     width: 100%;
     transition: all .3s;
     transform: scale(1.2);
 }
 
-.about .image img:hover {
+.about-section .image img:hover {
     transform: scale(1);
 }
 
@@ -433,7 +444,7 @@ footer .left-content ul li a img {
     padding: 0;
     width: 35px;
     height: 20px;
-
+    opacity: 50%;
 }
 
 footer .right-content {
